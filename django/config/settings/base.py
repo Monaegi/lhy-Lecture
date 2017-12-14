@@ -24,6 +24,10 @@ SECRET_KEY = secrets['SECRET_KEY']
 
 # Auth
 AUTH_USER_MODEL = 'members.User'
+# createsu command
+SUPERUSER_USERNAME = secrets['SUPERUSER_USERNAME']
+SUPERUSER_PASSWORD = secrets['SUPERUSER_PASSWORD']
+SUPERUSER_EMAIL = secrets['SUPERUSER_EMAIL']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
