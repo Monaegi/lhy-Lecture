@@ -40,3 +40,17 @@ pyenv local lecture
 # Install pip packages
 pip install .requirements/dev_local.py
 ```
+
+
+## Note
+
+### Python executable "python" is v3.4.3, which is not supported by gyp
+
+`.theme`폴더의 Bootstrap테마 모듈(`node_modules`)을 설치하기 위해 `npm install`하던 과정에서 오류 발생
+
+[https://github.com/nodejs/node-gyp/issues/746](https://github.com/nodejs/node-gyp/issues/746)
+
+```
+npm install --python=python2.7
+```
+
