@@ -3,6 +3,7 @@
 .secrets
 secrets.tar
 .static_root
+.static
 .media
 node_modules
 bower_components*

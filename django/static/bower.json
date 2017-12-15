@@ -1,0 +1,34 @@
+{
+  "name": "assan",
+  "homepage": "https://github.com/Monaegi/Lecture",
+  "authors": [
+    "LeeHanYeong <dev@azelf.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chart.js": "^2.6.0",
+    "font-awesome": "^4.7.0",
+    "jarallax": "^1.7.3",
+    "jquery-knob": "^1.2.13",
+    "magnific-popup": "^1.1.0",
+    "masonry": "^4.2.0",
+    "pushy": "^1.1.0",
+    "textillate": "^0.4.0",
+    "owl.carousel": "owl-carousel2#^2.2.1",
+    "tether": "^1.4.0",
+    "theia-sticky-sidebar": "^1.6.0",
+    "typed.js": "typed-js#^2.0.2",
+    "themify-icons": "^0.1.2",
+    "waypoints": "^4.0.1",
+    "wow": "wowjs#^1.1.2"
+  }
+}

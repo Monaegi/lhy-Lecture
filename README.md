@@ -54,3 +54,20 @@ pip install .requirements/dev_local.py
 npm install --python=python2.7
 ```
 
+### Sass preprocessor
+
+`Django Compressor`와 `django-libsass`를 사용
+
+- [Django Compressor](https://django-compressor.readthedocs.io/en/latest/)
+- [django-libsass](https://github.com/torchbox/django-libsass)
+
+### Bootstrap테마가 참조하는 bower_components
+
+`static`폴더 내의 `bower.json`파일을 이용, `bower install`명령어로 `bower_components`에 모듈들을 설치한다.
+
+```
+cd <Project container>
+cd django/static
+npm install
+```
+
