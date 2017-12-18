@@ -29,6 +29,8 @@ SUPERUSER_USERNAME = secrets['SUPERUSER_USERNAME']
 SUPERUSER_PASSWORD = secrets['SUPERUSER_PASSWORD']
 SUPERUSER_EMAIL = secrets['SUPERUSER_EMAIL']
 
+LOGIN_REDIRECT_URL = '/'
+
 # Static
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
