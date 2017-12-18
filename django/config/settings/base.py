@@ -31,6 +31,14 @@ SUPERUSER_EMAIL = secrets['SUPERUSER_EMAIL']
 
 LOGIN_REDIRECT_URL = 'index'
 
+# Email
+EMAIL_BACKEND = secrets['EMAIL_BACKEND']
+EMAIL_HOST = secrets['EMAIL_HOST']
+EMAIL_PORT = secrets['EMAIL_PORT']
+EMAIL_HOST_USER = secrets['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = secrets['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS = secrets['EMAIL_USE_TLS']
+
 # Static
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
