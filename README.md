@@ -71,3 +71,13 @@ cd django/static
 npm install
 ```
 
+### HTML 이메일 메시지 전송
+
+`EmailMultiAlternatives`클래스를 사용한다
+
+```
+msg = EmailMultiAlternatives(subject, text_content, to=[to], from_email=from_email)
+msg.attach_alternative(html_content, 'text/html')
+msg.send()
+```
+
