@@ -11,15 +11,17 @@ class User(AbstractUser):
         ('student', '수강생'),
     )
 
-    period = models.CharField(max_length=2, choices=PERIOD_CHOICES, blank=True)
-    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
-    img_profile = models.ImageField(upload_to='user', blank=True)
+    email = models.EmailField('이메일')
+    name = models.CharField('이름', max_length=20)
+    period = models.CharField('기수', max_length=2, choices=PERIOD_CHOICES, blank=True)
+    user_type = models.CharField('사용자 타입', max_length=20, choices=USER_TYPE_CHOICES)
+    img_profile = models.ImageField('프로필 이미지', upload_to='user', blank=True)
 
-    @property
-    def name(self):
-        return f'{self.last_name}{self.first_name}'
+    # disable exist fields
+    first_name = None
+    last_name = None
 
     def __str__(self):
         if self.period:
             return f'{self.get_period_display()} | {self.name}'
-        return f'{self.get_user_type_display()()} | {self.name}'
+        return f'{self.get_user_type_display()} | {self.name}'
