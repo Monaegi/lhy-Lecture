@@ -1,9 +1,13 @@
+cffi==1.11.1
 Django==2.0
 django-appconf==1.0.2
 django-compressor==2.2
 django-libsass==0.7
+greenlet==0.4.12
 libsass==0.13.4
+Pillow==5.0.0
 pytz==2017.3
 rcssmin==1.0.6
+readline==6.2.4.1
 rjsmin==1.0.12
 six==1.11.0
