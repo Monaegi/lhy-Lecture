@@ -6,8 +6,7 @@ from .models import User
 
 @admin.register(User)
 class UserAdmin(DjangoUserAdmin):
-    list_display = ('name', 'user_type', 'email',)
-    list_filter = ('user_type', 'period',)
+    list_display = ('name', 'email',)
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         ('기본정보', {'fields': ('name', 'email')}),

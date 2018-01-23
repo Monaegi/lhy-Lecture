@@ -9,7 +9,7 @@ class User(AbstractUser):
     name = models.CharField('이름', max_length=20)
     img_profile = models.ImageField('프로필 이미지', upload_to='user', blank=True)
     courses = models.ManyToManyField(
-        'course.Course',
+        'courses.Course',
         through='Membership',
         related_name='users',
         related_query_name='user',
@@ -31,8 +31,8 @@ class Membership(TimeStampedMixin, models.Model):
         ('manager', '매니저'),
         ('student', '수강생'),
     )
-    user = models.ForeignKey(User, verbose_name='사용자')
-    course = models.ForeignKey('course.Course', verbose_name='해당 코스')
+    user = models.ForeignKey(User, verbose_name='사용자', on_delete=models.CASCADE)
+    course = models.ForeignKey('courses.Course', verbose_name='해당 코스', on_delete=models.CASCADE)
     type = models.CharField('사용자 타입', max_length=20, choices=MEMBERSHIP_TYPE_CHOICES)
 
     def __str__(self):

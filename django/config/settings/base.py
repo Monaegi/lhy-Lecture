@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 
     'compressor',
 
+    'courses.apps.CoursesConfig',
     'members.apps.MembersConfig',
 ]
 
