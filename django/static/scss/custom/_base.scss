@@ -1,6 +1,15 @@
 html, body {
   font-family: 'Noto Sans Korean', serif;
 }
+#content-block {
+  min-height: calc(100vh - 188px);
+}
+.main-nav {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
 
 .parallax-overlay:before {
   background-color: rgba(0, 0, 0, 0.7);
