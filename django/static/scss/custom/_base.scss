@@ -19,6 +19,12 @@ html, body {
   font-weight: bolder;
   //color: white;
 }
+nav {
+  a.nav-link.dropdown-toggle.dropdown-hide::after {
+    visibility: hidden;
+    margin-left: -9px;
+  }
+}
 
 @media (min-width: 992px) {
   .navbar-nav {
