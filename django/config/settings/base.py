@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import json
 import os
 
+import sys
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -19,25 +21,14 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
 SECRET_BASE = os.path.join(SECRET_DIR, 'base.json')
 
+# secrets
 secrets = json.loads(open(SECRET_BASE).read())
-SECRET_KEY = secrets['SECRET_KEY']
+for key, value in secrets.items():
+    setattr(sys.modules[__name__], key, value)
 
 # Auth
 AUTH_USER_MODEL = 'members.User'
-# createsu command
-SUPERUSER_USERNAME = secrets['SUPERUSER_USERNAME']
-SUPERUSER_PASSWORD = secrets['SUPERUSER_PASSWORD']
-SUPERUSER_EMAIL = secrets['SUPERUSER_EMAIL']
-
 LOGIN_REDIRECT_URL = 'index'
-
-# Email
-EMAIL_BACKEND = secrets['EMAIL_BACKEND']
-EMAIL_HOST = secrets['EMAIL_HOST']
-EMAIL_PORT = secrets['EMAIL_PORT']
-EMAIL_HOST_USER = secrets['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = secrets['EMAIL_HOST_PASSWORD']
-EMAIL_USE_TLS = secrets['EMAIL_USE_TLS']
 
 # Static
 STATICFILES_FINDERS = (

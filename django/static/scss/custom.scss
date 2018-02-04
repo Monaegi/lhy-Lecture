@@ -1,0 +1,44 @@
+html, body {
+  font-family: 'Noto Sans Korean', serif;
+}
+
+.parallax-overlay:before {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  //color: white;
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: .7rem;
+    padding-left: .7rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    padding: .3rem .2rem;
+
+    a.navbar-brand {
+      font-size: .95rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: .2rem .15rem;
+    a.navbar-brand {
+      font-size: .9rem;
+    }
+  }
+}
