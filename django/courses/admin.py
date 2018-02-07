@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 
 from .models import (
@@ -9,20 +10,20 @@ from .models import (
 
 
 @admin.register(Subject)
-class SubjectAdmin(admin.ModelAdmin):
+class SubjectAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ('title',)
 
 
 @admin.register(Section)
-class SectionAdmin(admin.ModelAdmin):
+class SectionAdmin(SortableAdminMixin, admin.ModelAdmin):
     pass
 
 
 @admin.register(SectionNote)
-class SectionNoteAdmin(admin.ModelAdmin):
+class SectionNoteAdmin(SortableAdminMixin, admin.ModelAdmin):
     pass
 
 
 @admin.register(Course)
-class CourseAdmin(admin.ModelAdmin):
+class CourseAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ('subject', 'period',)

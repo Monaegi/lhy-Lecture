@@ -7,6 +7,9 @@ secrets.tar
 .media
 node_modules
 bower_components*
+adminsortable2
+.admin_reorder
+admin_reorder
 
 # CSS files
 static/css/

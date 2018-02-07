@@ -1,11 +1,13 @@
 from django.db import models
 from martor.models import MartorField
 
+from utils.mixins import SortableMixin
 
-class Subject(models.Model):
+
+class Subject(SortableMixin, models.Model):
     title = models.CharField(max_length=200)
 
-    class Meta:
+    class Meta(SortableMixin.Meta):
         verbose_name = '강의'
         verbose_name_plural = f'{verbose_name} 목록'
 
@@ -13,12 +15,12 @@ class Subject(models.Model):
         return self.title
 
 
-class Section(models.Model):
+class Section(SortableMixin, models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
 
-    class Meta:
+    class Meta(SortableMixin.Meta):
         verbose_name = '강의 섹션'
         verbose_name_plural = f'{verbose_name} 목록'
 
@@ -28,12 +30,12 @@ class Section(models.Model):
         return f'{self.title}'
 
 
-class SectionNote(models.Model):
+class SectionNote(SortableMixin, models.Model):
     section = models.ForeignKey(Section, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=100)
     content = MartorField(blank=True)
 
-    class Meta:
+    class Meta(SortableMixin.Meta):
         verbose_name = '섹션 노트'
         verbose_name_plural = f'{verbose_name} 목록'
 
@@ -43,11 +45,11 @@ class SectionNote(models.Model):
         return f'{self.title}'
 
 
-class Course(models.Model):
+class Course(SortableMixin, models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     period = models.IntegerField(default=1)
 
-    class Meta:
+    class Meta(SortableMixin.Meta):
         verbose_name = '강의 기수'
         verbose_name_plural = f'{verbose_name} 목록'
 

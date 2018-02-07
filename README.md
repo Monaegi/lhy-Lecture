@@ -84,3 +84,14 @@ msg.send()
 ### Markdown에디터 추가
 
 [https://github.com/agusmakmun/django-markdown-editor](https://github.com/agusmakmun/django-markdown-editor)
+
+
+### Admin Drag-and-Drop으로 순서 바꾸기
+
+[https://github.com/jrief/django-admin-sortable2](https://github.com/jrief/django-admin-sortable2)
+
+
+### Admin항목들을 보기좋게 정렬
+
+[https://github.com/mishbahr/django-modeladmin-reorder](https://github.com/mishbahr/django-modeladmin-reorder)
+
