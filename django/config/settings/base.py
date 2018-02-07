@@ -77,6 +77,8 @@ INSTALLED_APPS = [
     'adminsortable2',
     'compressor',
     'martor',
+    'rest_framework',
+    'django_filters',
 
     'courses.apps.CoursesConfig',
     'members.apps.MembersConfig',
