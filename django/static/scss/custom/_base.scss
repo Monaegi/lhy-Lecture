@@ -1,9 +1,51 @@
 html, body {
   font-family: 'Noto Sans Korean', serif;
 }
-#content-block {
-  min-height: calc(100vh - 188px);
+
+.middle-parent {
+  text-align: center;
+  .middle-child {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: inherit;
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    font-size: 1px;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 1px;
+  }
 }
+
+$main-nav-height: 70px;
+$footer-height: 70px;
+$content-height: calc(100vh - (#{$main-nav-height} + #{$footer-height}));
+#content-block {
+  min-height: $content-height;
+}
+footer {
+  height: $footer-height;
+  font-size: .7rem;
+  p {
+    margin: 0;
+  }
+}
+@media (max-width: 1199px) {
+  $main-nav-height: 48px;
+  $content-height: calc(100vh - (#{$main-nav-height} + #{$footer-height}));
+  #content-block {
+    min-height: $content-height;
+  }
+}
+@media (max-width: 400px) {
+  footer {
+
+  }
+}
+
 .main-nav {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,6 +57,30 @@ html, body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.transition {
+  transition-duration: 1s;
+}
+
+// alert
+#content-block div.messages {
+  transition-duration: .5s;
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  width: 100%;
+  text-align: right;
+
+  .alert {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    right: 0;
+    text-align: left;
+  }
+}
+
+// navbar
 .navbar-brand {
   font-weight: bolder;
   //color: white;

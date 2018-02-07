@@ -274,13 +274,13 @@
 					</a>
 				</li>
 					<li class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle dropdown-hide" role="button">
+					<a href="{% url 'logout' %}" class="nav-link dropdown-toggle dropdown-hide" role="button">
 						Logout
 					</a>
 				</li>
 				{% else %}
 				<li class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle dropdown-hide" role="button">
+					<a href="{% url 'login' %}" class="nav-link dropdown-toggle dropdown-hide" role="button">
 						Login
 					</a>
 				</li>

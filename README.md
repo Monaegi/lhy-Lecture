@@ -75,9 +75,12 @@ npm install
 
 `EmailMultiAlternatives`클래스를 사용한다
 
-```
+```python
 msg = EmailMultiAlternatives(subject, text_content, to=[to], from_email=from_email)
 msg.attach_alternative(html_content, 'text/html')
 msg.send()
 ```
 
+### Markdown에디터 추가
+
+[https://github.com/agusmakmun/django-markdown-editor](https://github.com/agusmakmun/django-markdown-editor)

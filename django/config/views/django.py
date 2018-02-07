@@ -9,6 +9,11 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 
+__all__ = (
+    'IndexView',
+    'EmailSend',
+)
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'

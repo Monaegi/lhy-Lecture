@@ -76,13 +76,31 @@
 	{% include 'include/navbar.html' %}
 
 	<div id="content-block">
-	{% block content %}
-	{% endblock %}
+		{% block content %}
+		{% endblock %}
+
+		{% if messages %}
+			<div class="messages">
+				{% for message in messages %}
+					{% include 'include/alert.html' %}
+				{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 
 	{% include 'include/footer.html' %}
 	<!-- jQuery first, then Tether, then Bootstrap JS. -->
 	<script src="{% static 'js/plugins/plugins.js' %}"></script>
 	<script src="{% static 'js/assan.custom.js' %}"></script>
+	<script>
+		// messages자동 사라짐
+		var messagesBlock = document.querySelector('.messages');
+		setTimeout(function() {
+		  messagesBlock.style.opacity = '0';
+		  setTimeout(function() {
+		    messagesBlock.remove();
+		  }, 500);
+		}, 3500);
+	</script>
 </body>
 </html>

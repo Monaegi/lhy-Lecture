@@ -3,3 +3,4 @@ django-compressor<2.3
 django-libsass<0.8
 Pillow<6.0
 google-api-python-client<1.7
+martor<1.3
