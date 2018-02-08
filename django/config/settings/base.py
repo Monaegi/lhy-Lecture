@@ -54,7 +54,7 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
 
-# Martor
+# Martor (Markdown editor)
 MARTOR_ENABLE_CONFIGS = {
     'imgur': 'true',  # to enable/disable imgur uploader/custom uploader.
     'mention': 'true',  # to enable/disable mention
@@ -64,6 +64,10 @@ MARTOR_ENABLE_CONFIGS = {
 MARTOR_UPLOAD_PATH = 'martor/{}'.format(time.strftime("%Y/%m/%d/"))
 MARTOR_UPLOAD_URL = '/api/uploader/'  # change to local uploader
 MAX_IMAGE_UPLOAD_SIZE = 10485760  # 10MB
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -75,6 +79,7 @@ INSTALLED_APPS = [
 
     'admin_reorder',
     'adminsortable2',
+    'corsheaders',
     'compressor',
     'martor',
     'rest_framework',
@@ -85,6 +90,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

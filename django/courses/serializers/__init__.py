@@ -12,3 +12,10 @@ class SectionSerializer(serializers.ModelSerializer):
             'title',
             'description',
         )
+
+
+class SectionDetailSerializer(SectionSerializer):
+    class Meta(SectionSerializer.Meta):
+        fields = SectionSerializer.Meta.fields + (
+
+        )
