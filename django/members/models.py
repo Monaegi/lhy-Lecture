@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from utils.models import TimeStampedMixin
+from utils.mixins import TimeStampedMixin
 
 
 class User(AbstractUser):
