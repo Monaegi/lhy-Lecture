@@ -69,6 +69,34 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
 )
 
+# Admin reorder
+ADMIN_REORDER = (
+    {
+        'app': 'members',
+        'label': '회원',
+        'models': (
+            'members.User',
+        )
+    },
+    {
+        'app': 'courses',
+        'label': '코스',
+        'models': (
+            'courses.Subject',
+            'courses.Course',
+        ),
+    },
+    {
+        'app': 'courses',
+        'label': '섹션',
+        'models': (
+            'courses.Section',
+            'courses.SectionNote',
+        ),
+    },
+)
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

@@ -2,6 +2,11 @@ from rest_framework import serializers
 
 from ..models import SectionNote
 
+__all__ = (
+    'SectionNoteSerializer',
+    'SectionNoteDetailSerializer',
+)
+
 
 class SectionNoteSerializer(serializers.ModelSerializer):
     class Meta:

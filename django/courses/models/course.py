@@ -1,6 +1,5 @@
 from django.db import models
 
-from utils.mixins import SortableMixin
 from utils.models import SortTimeModel
 
 __all__ = (
