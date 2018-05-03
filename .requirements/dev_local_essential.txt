@@ -8,3 +8,5 @@ django-admin-sortable2<0.7
 django-modeladmin-reorder<0.3
 djangorestframework<3.8
 django-filter<1.2
+django-extensions<2.0
+pygraphviz<1.4

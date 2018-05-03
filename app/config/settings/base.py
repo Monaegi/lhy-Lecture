@@ -112,6 +112,7 @@ INSTALLED_APPS = [
     'martor',
     'rest_framework',
     'django_filters',
+    'django_extensions',
 
     'courses.apps.CoursesConfig',
     'members.apps.MembersConfig',
