@@ -1,7 +1,7 @@
 from django.db import models
 from martor.models import MartorField
 
-from utils.models import SortTimeModel
+from utils import SortTimeModel
 from .course import Subject
 
 __all__ = (
@@ -38,6 +38,7 @@ class SectionNote(SortTimeModel):
         blank=True, null=True,
     )
     title = models.CharField(max_length=100)
+
     content = MartorField(blank=True)
 
     class Meta(SortTimeModel.Meta):

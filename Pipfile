@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-compressor = "*"
+django-libsass = "*"
+pillow = "*"
+django-admin-sortable = "*"
+django-modeladmin-reorder = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+martor = "*"
+django-filter = "*"
+django-extensions = "*"
+django-json-secrets = "*"
+django-storages = "*"
+"psycopg2-binary" = "*"
+"boto3" = "*"
+django-sass-processor = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

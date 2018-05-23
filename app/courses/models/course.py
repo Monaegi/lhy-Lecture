@@ -1,6 +1,6 @@
 from django.db import models
 
-from utils.models import SortTimeModel
+from utils import SortTimeModel
 
 __all__ = (
     'Subject',

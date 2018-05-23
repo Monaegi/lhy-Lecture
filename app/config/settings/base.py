@@ -9,24 +9,19 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-import json
 import os
-import sys
 import time
 
 from django.contrib import messages
+from djs import import_secrets
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
-SECRET_BASE = os.path.join(SECRET_DIR, 'base.json')
+SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 
-# secrets
-secrets = json.loads(open(SECRET_BASE).read())
-for key, value in secrets.items():
-    setattr(sys.modules[__name__], key, value)
+import_secrets()
 
 # Auth
 AUTH_USER_MODEL = 'members.User'
@@ -43,10 +38,17 @@ MESSAGE_TAGS = {
 }
 
 # Static
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
+    'sass_processor.finders.CssFinder',
 )
 
 # Django Compressor
@@ -96,7 +98,6 @@ ADMIN_REORDER = (
     },
 )
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -108,11 +109,12 @@ INSTALLED_APPS = [
     'admin_reorder',
     'adminsortable2',
     'corsheaders',
-    'compressor',
     'martor',
     'rest_framework',
     'django_filters',
     'django_extensions',
+    'sass_processor',
+    'storages',
 
     'courses.apps.CoursesConfig',
     'members.apps.MembersConfig',

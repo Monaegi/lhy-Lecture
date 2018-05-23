@@ -1,1 +1,1 @@
-from .dev_local import *
+from .local import *

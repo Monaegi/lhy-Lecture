@@ -1,5 +1,5 @@
 {% load static %}
-{% load compress %}
+{% load sass_tags %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,14 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Django Web Programming Lecture</title>
-	
-	{% compress css %}
+
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/font.scss' %}">
-	<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/plugins/plugins.scss' %}">
-	<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/style.scss' %}">
-	<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/custom.scss' %}">
-	{% endcompress %}
+	<link rel="stylesheet" type="text/css" href="{% sass_src 'scss/font.scss' %}">
+	<link rel="stylesheet" type="text/css" href="{% sass_src 'scss/plugins/plugins.scss' %}">
+	<link rel="stylesheet" type="text/css" href="{% sass_src 'scss/style.scss' %}">
+	<link rel="stylesheet" type="text/css" href="{% sass_src 'scss/custom.scss' %}">
 </head>
 <body>
 	<div id="preloader">
