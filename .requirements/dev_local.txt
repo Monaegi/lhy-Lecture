@@ -24,7 +24,7 @@ pytz==2017.3
 rcssmin==1.0.6
 requests==2.18.4
 rjsmin==1.0.12
-rsa==3.4.2
+rsa==4.1
 serializers==0.2.4
 six==1.11.0
 typing==3.6.4
